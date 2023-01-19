@@ -168,7 +168,7 @@ Specify the arguments of `--algorithm` to run the deployed benchmark algorithm. 
 
 ## 4. Introduction to FedTED 
 
-FedTED is a model-heterogeneous generalization-personalization balanced framework via **<u>t</u>**win-branch network and f<u>**e**</u>ature **<u>d</u>**istillation.
+FedTED is a model-heterogeneous generalization-personalization balanced framework via **t**win-branch network and f**e**ature **d**istillation.
 
 ### 4.1 Scenario
 
