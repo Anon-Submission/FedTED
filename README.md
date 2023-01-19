@@ -2,7 +2,7 @@
 
 Source code of "Improving Generalization and Personalization in Model-Heterogeneous Federated Learning"
 
-![latent-class](.\docs\latent-class.gif)
+![latent-class](docs/latent-class.gif)
 
 
 
@@ -176,7 +176,7 @@ In model-homogeneous federated learning, expensive communication overhead  hinde
 
 In this FedTED , we try to solve a more challenging problem than before: ***How to ensure both generalization and personalization of federated learning when models and data are heterogeneous (two-fold heterogeneous)?*** Overcoming this obstacle, FL will be able to enjoy multiple benefits in meeting personalized needs, integrating generic model, and protecting user privacy.
 
-![background](.\docs\background.png)
+![background](docs/background.png)
 
 In the scenario of FedTED, *both clients' data and models are heterogeneous*, which makes all model-homogeneous federated algorithms no longer applicable. Due to privacy concerns, users no longer share their local model but upload latent knowledge. Using this knowledge, the server can reconstruct a generic model, while clients can train better-personalized models.
 
@@ -184,7 +184,7 @@ In the scenario of FedTED, *both clients' data and models are heterogeneous*, wh
 
 When FedTED is working, the clients first distill their feature extractor under the guidance of the proxy data (*flow (1) in the figure*), and then updates the distilled feature extractor and the twin predictors respectively (*flow (2) in the figure*). In model-heterogeneous scenarios, only the generic predictor is uploaded. Afterwards, the server trains a feature generator through the uploaded predictors (*flow (3) in the figure*), generates proxy data, and aggregates the uploaded predictors (*flow (4) in the figure*). The generated proxy data can be used to train a feature extractor, which in turn forms a new generic model with the aggregated predictor.
 
-![framework](.\docs\framework.png)
+![framework](docs/framework.png)
 
 ### 4.3 Evaluation
 
@@ -200,23 +200,23 @@ We count the weights of twin branches and get the weight distribution. After tra
 
 + weights of generic branch
 
-![latent-class](.\docs\g-weight.gif)
+![latent-class](docs/g-weight.gif)
 
 + weights of personalized branch
 
-![latent-class](.\docs\p-weight.gif)
+![latent-class](docs/p-weight.gif)
 
 #### Learned Latent Knowledge of FedTED
 
 We take the argmax of latent for each sample as its feature. Among them, the latent features of different classes of data have significant differences. This indicates that when the model converges, the model trained by FedTED can preserve the knowledge of the sample data in a richer form in by latent, which can then be transferred between the client and the server.
 
-![latent-class](.\docs\latent-class.gif)
+![latent-class](docs/latent-class.gif)
 
 #### Effectiveness of Re-wight
 
 In FedTED, we decouple the twin-branch network of FedTED into two related tasks by a prior conditional corrector. Using this concise re-weight variable, the training effect of FedTED is significantly stabilized. 
 
- ![re-weight-performance](.\docs\re-weight-performance.png)
+ ![re-weight-performance](docs/re-weight-performance.png)
 
 
 
